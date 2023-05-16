@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "./map.css";
+import { Navbar, Header } from "../../components";
 
 const Map = () => {
   const mapContainer = useRef(null);
@@ -54,9 +55,13 @@ const Map = () => {
   });
 
   return (
-    <div className="map-wrap">
-      <div ref={mapContainer} className="map" />
-    </div>
+    <>  
+      <Header text="Поиск на карте"/>
+        <div className="map-wrap">
+          <div ref={mapContainer} className="map" />
+        </div>
+      <Navbar />
+    </>
   );
 };
 
